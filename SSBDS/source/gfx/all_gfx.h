@@ -16,6 +16,9 @@
 } PAGfx_struct;
 #endif
 
+extern const unsigned char charsel[40960] __attribute__ ((aligned (4))) ;  
+extern const unsigned short charsel_Pal[204] __attribute__ ((aligned (4))) ;
+
 extern const unsigned short shield_Pal[90] __attribute__ ((aligned (4))) ;
 extern const unsigned char shield_Sprite[4096] __attribute__ ((aligned (4))) ;
 
@@ -34,7 +37,6 @@ extern const unsigned char visibleminimap_Sprite[4096] __attribute__ ((aligned (
 
 extern const unsigned char projectilesprites[122880] __attribute__ ((aligned (4))) ;
 extern const unsigned char charprev[40960] __attribute__ ((aligned (4))) ;
-extern const unsigned char charsel[40960] __attribute__ ((aligned (4))) ;
 extern const unsigned char stagesel[40960] __attribute__ ((aligned (4))) ;
 extern const unsigned char specialFX[73728] __attribute__ ((aligned (4))) ;
 extern const unsigned char charminis[2560] __attribute__ ((aligned (4))) ;
@@ -71,7 +73,6 @@ extern const unsigned char pokemonstadiumminimap_Tiles[4096] __attribute__ ((ali
 extern PAGfx_struct pokemonstadiumminimap; // background pointer
 
 extern const unsigned short projectilesprites_Pal[19] __attribute__ ((aligned (4))) ;
-extern const unsigned short charsel_Pal[235] __attribute__ ((aligned (4))) ;
 extern const unsigned short stagesel_Pal[245] __attribute__ ((aligned (4))) ;
 extern const unsigned short specialFX_Pal[242] __attribute__ ((aligned (4))) ;
 extern const unsigned short charprev_Pal[250] __attribute__ ((aligned (4))) ;

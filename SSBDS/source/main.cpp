@@ -11,7 +11,7 @@
 #define DEBUG_ON // turns on printing of information to screen
 //#define SLOPEDSTAGES_ON // Castle Seige and Corneria
 #define LAN_ON // REMEMBER TO CHANGE MAKEFILE TOO!!!!
-//#define MP3_ON
+#define MP3_ON
 // turns certain features on and off
 
 //PALib:
@@ -1089,7 +1089,7 @@ void cameraOptions() {
 	openGif(SUB_SCREEN, "/SSBDS_Files/gifs/menubg.gif");
 	
 #ifdef MP3_ON
-	AS_MP3StreamPlay("/SSBDS_Files/music/Menu.mp3");
+	AS_MP3StreamPlay("/SSBDS_Files/music/menu.mp3");
 #endif
 
 	PA_InitText(SUB_SCREEN, 0);
@@ -1299,7 +1299,7 @@ double distance(int x1, int y1, int x2, int y2) {
 void initMainMenu() {
 	PA_Init8bitBg(SUB_SCREEN, 3);
 	PA_Init8bitBg(MAIN_SCREEN, 3);
-	openGif(SUB_SCREEN, "/SSBDS_Files/gifs/menu.gif");
+	openGif(SUB_SCREEN, "/SSBDS_Files/gifs/menu_dl.gif");
 	// opens gif background. no need to reinit, just loads over the old gif for this screen.
 	openGif(MAIN_SCREEN, "/SSBDS_Files/gifs/title2.gif");
 	//put title screen on top screen when at main menu.
@@ -1327,7 +1327,9 @@ void mainMenu() {
 		if(Stylus.Newpress) {
 			int x = Stylus.X;
 			int y = Stylus.Y;
-			if(distance(x, y, 64, 74) <= 48) {
+			//if(distance(x, y, 64, 74) <= 48) {
+			
+			if(x>25&&x<127&&y>10&&y<127) {
 				AS_SoundQuickPlay(menuconfirm);
 #ifdef MP3_ON
 				AS_MP3Stop(); // stops bg music
@@ -1342,7 +1344,8 @@ void mainMenu() {
 					initMainMenu();
 				}
 			}
-			else if(distance(x, y, 126, 141) <= 48) {				
+			//else if(distance(x, y, 126, 141) <= 48) {				
+			else if(x>127&&x<230&&y>10&&y<127) {
 				AS_SoundQuickPlay(menuconfirm);
 #ifdef MP3_ON
 				AS_MP3Stop(); // stops bg music
@@ -1353,7 +1356,8 @@ void mainMenu() {
 #endif
 				initMainMenu();
 			}
-			else if(distance(x, y, 188, 72) <= 48) {				
+			//else if(distance(x, y, 188, 72) <= 48) {				
+			else if(x>25&&x<127&&y>147&&y<170) {
 				AS_SoundQuickPlay(menuconfirm);
 #ifdef MP3_ON
 				AS_MP3Stop(); // stops bg music
@@ -1362,7 +1366,9 @@ void mainMenu() {
 				extras();
 				initMainMenu();
 			}
-			else if(distance(x, y, 256, 192) <= 48) {
+			//else if(distance(x, y, 256, 192) <= 48) {
+			
+			else if(x>127&&x<230&&y>147&&y<170) {
 				AS_SoundQuickPlay(menuconfirm);
 #ifdef MP3_ON
 				AS_MP3Stop(); // stops bg music
